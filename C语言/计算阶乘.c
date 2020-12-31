@@ -1,9 +1,9 @@
-#include<stdio.h>
+#include<stdio.h>  
 int main()
 {
     int a = 1;
     int n = 1;
-    while (n <= 4)
+    while (n <= 10)
     {
         a = a * n;
         n++;
