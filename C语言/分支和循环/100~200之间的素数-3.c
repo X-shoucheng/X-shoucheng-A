@@ -1,15 +1,15 @@
 #include <Windows.h>
+#include <math.h>
 #include <stdio.h>
 #include <string.h>
-#include<math.h>
-int main()                  //如果i=a*b，那么a、b中至少有一个小于i的开平方
+int main() //如果i=a*b，那么a、b中至少有一个小于i的开平方
 {
     int i = 0;
     int count = 0;
-    for (i = 100; i <= 200; i++)
+    for (i = 101; i <= 200; i+=2)//从奇数开始，用i+2排除偶数
     {
         int j = 0;
-        for (j = 2; j < sqrt(i); j++)         //sqrt-开平方,需要math库
+        for (j = 2; j < sqrt(i); j++) //sqrt-开平方,需要math库
         {
             if (i % j == 0)
             {
