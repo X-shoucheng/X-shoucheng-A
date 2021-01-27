@@ -57,9 +57,6 @@ void test()
         case 1:
             game();//进入游戏
             break;
-        case 2:
-            printf("退出游戏\n");
-            break;
         default:
             printf("选择错误，请重新选择！\n");
             break;
