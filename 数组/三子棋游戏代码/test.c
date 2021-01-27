@@ -1,6 +1,6 @@
 //运行的主程序
 #include "game.h"
-void menu() //进入菜单
+void menu() //游戏进入菜单
 {
     printf("*********************\n");
     printf("***1-play***0-exit***\n");
@@ -13,22 +13,18 @@ void game() //游戏的算法
     InitBoard(board, ROW, COL);    //初始化棋盘
     DisplayBoard(board, ROW, COL); //打印棋盘
     //下棋
-    while (1)
+    while (1)//循环一直开启，除非break
     {
-        //玩家下棋
-        PlayerMove(board, ROW, COL);
-        DisplayBoard(board, ROW, COL);
-        //判断玩家输赢
-        ret = IsWin(board, ROW, COL);
+        PlayerMove(board, ROW, COL);//玩家下棋
+        DisplayBoard(board, ROW, COL);//打印棋盘
+        ret = IsWin(board, ROW, COL); //判断玩家输赢
         if (ret != 'C')
         {
             break;
         }
-        //电脑下棋
-        ComputerMove(board, ROW, COL);
-        DisplayBoard(board, ROW, COL);
-        //判断电脑输赢
-        ret = IsWin(board, ROW, COL);
+        ComputerMove(board, ROW, COL); //电脑下棋
+        DisplayBoard(board, ROW, COL);//打印棋盘
+        ret = IsWin(board, ROW, COL); //判断电脑输赢
         if (ret != 'C')
         {
             break;
@@ -50,16 +46,16 @@ void game() //游戏的算法
 void test()
 {
     int input = 0;
-    srand((unsigned int)time(NULL));
+    srand((unsigned int)time(NULL));//建立随机数，以时间为随机数种子
     do
     {
-        menu();
+        menu();//首先打印游戏进入菜单
         printf("请选择：");
         scanf("%d", &input);
-        switch (input)
+        switch (input)//输入1，进入case1；输入0，进入case2；输入其他，进入default
         {
         case 1:
-            game();
+            game();//进入游戏
             break;
         case 2:
             printf("退出游戏\n");
